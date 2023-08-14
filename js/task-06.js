@@ -1,11 +1,20 @@
-const input = document.querySelector('#validation-input');
-const inputLength = input.getAttribute('data-length');
+const input = document.querySelector("#validation-input");
+const inputLength = input.getAttribute("data-length");
 
-input.addEventListener('blur', () => {
-    input.textContent === null ?
-        input.style.border = '2px solid #bdbdbd' :
-    input.value.length === Number(inputLength) ?
-        input.style.borderColor = '#4caf50' :
-            input.style.borderColor = '#f44336'
-        
+input.addEventListener("blur", () => {
+  const personInput = input.value.replace(/ /g, "");
+  if (personInput.length === Number(inputLength)) {
+    if (input.classList.contains("invalid")) {
+      input.classList.remove("invalid");
+      input.classList.add("valid");
+    } else {
+      input.classList.add("valid");
+    }
+  } else if (input.classList.contains("valid")) {
+    input.classList.remove("valid");
+    input.classList.add("invalid");
+  } else {
+    input.classList.add("invalid");
+  }
+  console.log(personInput.length);
 });
