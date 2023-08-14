@@ -13,7 +13,7 @@ function getRandomHexColor() {
 }
 
 createBtn.addEventListener("click", () => {
-  if (inputEl.value >= 1 && inputEl.value <= 100) {
+  if (inputEl.value >= minValue && inputEl.value <= maxValue) {
     for (let i = Number(inputEl.value); i >= minValue && i <= maxValue; i += step) {
     const randomColor = getRandomHexColor();
     const box = document.createElement("div");

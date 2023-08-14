@@ -1,13 +1,7 @@
 // first part of task.
 const liEl = document.querySelectorAll('.item');
-
-const countLiElements = () => {
-    let total = 0;
-    liEl.forEach((item, index) => total += index)
-    return total;
-};
-console.log(`Number of categories: ${countLiElements()}`);
-
+ 
+console.log(`Number of categories: ${liEl.length}`);
 
 // second part of task.
 liEl.forEach((item) => {
